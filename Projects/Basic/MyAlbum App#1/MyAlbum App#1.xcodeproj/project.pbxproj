@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A002ED6827E807E2009AC94E /* MyAlbum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAlbum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A002ED6827E807E2009AC94E /* MyAlbum App#1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyAlbum App#1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A002ED6B27E807E2009AC94E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A002ED6D27E807E2009AC94E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A002ED6F27E807E2009AC94E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		A002ED5F27E807E2009AC94E = {
 			isa = PBXGroup;
 			children = (
-				A002ED6A27E807E2009AC94E /* MyAlbum */,
+				A002ED6A27E807E2009AC94E /* MyAlbum App#1 */,
 				A002ED6927E807E2009AC94E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,12 +48,12 @@
 		A002ED6927E807E2009AC94E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A002ED6827E807E2009AC94E /* MyAlbum.app */,
+				A002ED6827E807E2009AC94E /* MyAlbum App#1.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A002ED6A27E807E2009AC94E /* MyAlbum */ = {
+		A002ED6A27E807E2009AC94E /* MyAlbum App#1 */ = {
 			isa = PBXGroup;
 			children = (
 				A002ED6B27E807E2009AC94E /* AppDelegate.swift */,
@@ -64,15 +64,15 @@
 				A002ED7627E807E4009AC94E /* LaunchScreen.storyboard */,
 				A002ED7927E807E4009AC94E /* Info.plist */,
 			);
-			path = MyAlbum;
+			path = "MyAlbum App#1";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A002ED6727E807E2009AC94E /* MyAlbum */ = {
+		A002ED6727E807E2009AC94E /* MyAlbum App#1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A002ED7C27E807E4009AC94E /* Build configuration list for PBXNativeTarget "MyAlbum" */;
+			buildConfigurationList = A002ED7C27E807E4009AC94E /* Build configuration list for PBXNativeTarget "MyAlbum App#1" */;
 			buildPhases = (
 				A002ED6427E807E2009AC94E /* Sources */,
 				A002ED6527E807E2009AC94E /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = MyAlbum;
+			name = "MyAlbum App#1";
 			productName = MyAlbum;
-			productReference = A002ED6827E807E2009AC94E /* MyAlbum.app */;
+			productReference = A002ED6827E807E2009AC94E /* MyAlbum App#1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,7 +101,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A002ED6327E807E2009AC94E /* Build configuration list for PBXProject "MyAlbum" */;
+			buildConfigurationList = A002ED6327E807E2009AC94E /* Build configuration list for PBXProject "MyAlbum App#1" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -114,7 +114,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A002ED6727E807E2009AC94E /* MyAlbum */,
+				A002ED6727E807E2009AC94E /* MyAlbum App#1 */,
 			);
 		};
 /* End PBXProject section */
@@ -322,7 +322,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A002ED6327E807E2009AC94E /* Build configuration list for PBXProject "MyAlbum" */ = {
+		A002ED6327E807E2009AC94E /* Build configuration list for PBXProject "MyAlbum App#1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A002ED7A27E807E4009AC94E /* Debug */,
@@ -331,7 +331,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A002ED7C27E807E4009AC94E /* Build configuration list for PBXNativeTarget "MyAlbum" */ = {
+		A002ED7C27E807E4009AC94E /* Build configuration list for PBXNativeTarget "MyAlbum App#1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A002ED7D27E807E4009AC94E /* Debug */,
