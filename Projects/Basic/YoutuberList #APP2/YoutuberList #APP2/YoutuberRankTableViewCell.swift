@@ -25,7 +25,7 @@ class YoutuberRankTableViewCell: UITableViewCell {
     }
     
     private func configureImageView() {
-        self.imageview.layer.cornerRadius = self.imageview.frame.height / 2
+        self.imageview.layer.cornerRadius = self.imageview.frame.width / 2
         self.imageview.layer.borderWidth = 1
         self.imageview.layer.borderColor = UIColor.clear.cgColor
         

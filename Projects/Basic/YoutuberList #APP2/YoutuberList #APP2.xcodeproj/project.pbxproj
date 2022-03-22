@@ -14,7 +14,8 @@
 		A095C8C827E9BFB100A58805 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A095C8C727E9BFB100A58805 /* Assets.xcassets */; };
 		A095C8CB27E9BFB100A58805 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A095C8C927E9BFB100A58805 /* LaunchScreen.storyboard */; };
 		A095C8D327E9C9B600A58805 /* YoutuberRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095C8D227E9C9B600A58805 /* YoutuberRankTableViewCell.swift */; };
-		A095C8D527E9EB5600A58805 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095C8D427E9EB5600A58805 /* DetailViewController.swift */; };
+		A095C8D727E9F0B800A58805 /* Youtuber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095C8D627E9F0B800A58805 /* Youtuber.swift */; };
+		A095C8D927EA11AE00A58805 /* YoutuberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095C8D827EA11AE00A58805 /* YoutuberDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,8 @@
 		A095C8CA27E9BFB100A58805 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A095C8CC27E9BFB100A58805 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A095C8D227E9C9B600A58805 /* YoutuberRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberRankTableViewCell.swift; sourceTree = "<group>"; };
-		A095C8D427E9EB5600A58805 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A095C8D627E9F0B800A58805 /* Youtuber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Youtuber.swift; sourceTree = "<group>"; };
+		A095C8D827EA11AE00A58805 /* YoutuberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +62,50 @@
 		A095C8BD27E9BFB000A58805 /* YoutuberList #APP2 */ = {
 			isa = PBXGroup;
 			children = (
+				A095C8DD27EA196600A58805 /* View */,
+				A095C8DC27EA196300A58805 /* Controller */,
+				A095C8DA27EA195000A58805 /* Model */,
 				A095C8BE27E9BFB000A58805 /* AppDelegate.swift */,
 				A095C8C027E9BFB000A58805 /* SceneDelegate.swift */,
-				A095C8C227E9BFB000A58805 /* YoutuberRankViewController.swift */,
-				A095C8D227E9C9B600A58805 /* YoutuberRankTableViewCell.swift */,
-				A095C8C427E9BFB000A58805 /* Main.storyboard */,
 				A095C8C727E9BFB100A58805 /* Assets.xcassets */,
 				A095C8C927E9BFB100A58805 /* LaunchScreen.storyboard */,
 				A095C8CC27E9BFB100A58805 /* Info.plist */,
-				A095C8D427E9EB5600A58805 /* DetailViewController.swift */,
 			);
 			path = "YoutuberList #APP2";
+			sourceTree = "<group>";
+		};
+		A095C8DA27EA195000A58805 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A095C8D627E9F0B800A58805 /* Youtuber.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A095C8DC27EA196300A58805 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A095C8D827EA11AE00A58805 /* YoutuberDetailViewController.swift */,
+				A095C8C227E9BFB000A58805 /* YoutuberRankViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A095C8DD27EA196600A58805 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A095C8DE27EA19E500A58805 /* Cell */,
+				A095C8C427E9BFB000A58805 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A095C8DE27EA19E500A58805 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A095C8D227E9C9B600A58805 /* YoutuberRankTableViewCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +180,9 @@
 			files = (
 				A095C8D327E9C9B600A58805 /* YoutuberRankTableViewCell.swift in Sources */,
 				A095C8C327E9BFB000A58805 /* YoutuberRankViewController.swift in Sources */,
-				A095C8D527E9EB5600A58805 /* DetailViewController.swift in Sources */,
 				A095C8BF27E9BFB000A58805 /* AppDelegate.swift in Sources */,
+				A095C8D927EA11AE00A58805 /* YoutuberDetailViewController.swift in Sources */,
+				A095C8D727E9F0B800A58805 /* Youtuber.swift in Sources */,
 				A095C8C127E9BFB000A58805 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
