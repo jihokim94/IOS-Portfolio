@@ -25,7 +25,6 @@ class YoutuberDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateDetailUI()
-
     }
 
 }

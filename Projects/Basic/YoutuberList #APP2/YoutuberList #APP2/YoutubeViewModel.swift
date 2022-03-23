@@ -32,7 +32,7 @@ class YoutuberListViewModel {
     }
     
     func getYoutuberByIndex (at index : IndexPath) -> Youtuber {
-        return list[index.row]
+        return list[index.item]
     }
     
 }

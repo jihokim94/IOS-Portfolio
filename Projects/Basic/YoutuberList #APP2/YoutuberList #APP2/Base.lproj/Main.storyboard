@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,72 +33,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="145" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yFw-P2-H3u">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HNM-6y-Tj4">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="145" id="u7j-zj-oKI" customClass="YoutuberRankTableViewCell" customModule="YoutuberList__APP2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="145"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u7j-zj-oKI" id="Mo7-yg-UD6">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="145"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="In0-WM-fxL">
+                                    <size key="itemSize" width="200" height="350"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="wo0-d5-CUp" customClass="YoutuberCollectionViewCell" customModule="YoutuberList__APP2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="350"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6jL-uI-BNA">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="350"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5fX-u5-2FZ">
-                                                    <rect key="frame" x="0.0" y="1" width="165" height="142.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ds4-dO-Vlb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="285.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="165" id="B3a-Q8-sjr"/>
+                                                        <constraint firstAttribute="width" secondItem="ds4-dO-Vlb" secondAttribute="height" multiplier="7:10" id="oT9-nd-7e3"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="6dZ-8g-nIM">
-                                                    <rect key="frame" x="175" y="21" width="209" height="103"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="채널명 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ut-jr-QcI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="209" height="27"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구독자:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCJ-sE-w4M">
-                                                            <rect key="frame" x="0.0" y="76" width="209" height="27"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구독자 수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeA-60-lja">
+                                                    <rect key="frame" x="0.0" y="321" width="200" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유튜버명" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMc-nA-kFO">
+                                                    <rect key="frame" x="0.0" y="292" width="200" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="6dZ-8g-nIM" firstAttribute="leading" secondItem="5fX-u5-2FZ" secondAttribute="trailing" constant="10" id="3e1-Id-dvD"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="6dZ-8g-nIM" secondAttribute="bottom" constant="10" id="RDN-KW-0gI"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="6dZ-8g-nIM" secondAttribute="trailing" constant="10" id="okL-1U-UYj"/>
-                                                <constraint firstItem="6dZ-8g-nIM" firstAttribute="top" secondItem="Mo7-yg-UD6" secondAttribute="topMargin" constant="10" id="w1Q-da-zSM"/>
-                                                <constraint firstItem="5fX-u5-2FZ" firstAttribute="top" secondItem="Mo7-yg-UD6" secondAttribute="top" id="wcw-9i-MMD"/>
-                                                <constraint firstItem="5fX-u5-2FZ" firstAttribute="leading" secondItem="Mo7-yg-UD6" secondAttribute="leading" id="xdQ-hg-Flq"/>
-                                                <constraint firstAttribute="bottom" secondItem="5fX-u5-2FZ" secondAttribute="bottom" id="yOB-gk-IjT"/>
+                                                <constraint firstItem="mMc-nA-kFO" firstAttribute="leading" secondItem="6jL-uI-BNA" secondAttribute="leading" id="93d-Tk-iIq"/>
+                                                <constraint firstItem="xeA-60-lja" firstAttribute="centerX" secondItem="ds4-dO-Vlb" secondAttribute="centerX" id="ZSP-Ny-Dk1"/>
+                                                <constraint firstAttribute="trailing" secondItem="ds4-dO-Vlb" secondAttribute="trailing" id="cCC-nC-WKt"/>
+                                                <constraint firstAttribute="trailing" secondItem="mMc-nA-kFO" secondAttribute="trailing" id="cVy-7q-fja"/>
+                                                <constraint firstItem="mMc-nA-kFO" firstAttribute="top" secondItem="ds4-dO-Vlb" secondAttribute="bottom" constant="6.5" id="eoW-oV-D4m"/>
+                                                <constraint firstItem="mMc-nA-kFO" firstAttribute="centerX" secondItem="ds4-dO-Vlb" secondAttribute="centerX" id="fDg-9o-VYb"/>
+                                                <constraint firstAttribute="trailing" secondItem="xeA-60-lja" secondAttribute="trailing" id="hEL-Ni-sgd"/>
+                                                <constraint firstItem="xeA-60-lja" firstAttribute="top" secondItem="mMc-nA-kFO" secondAttribute="bottom" constant="8" symbolic="YES" id="pqm-6j-Wca"/>
+                                                <constraint firstItem="xeA-60-lja" firstAttribute="leading" secondItem="6jL-uI-BNA" secondAttribute="leading" id="r4Q-HM-4jB"/>
+                                                <constraint firstItem="ds4-dO-Vlb" firstAttribute="leading" secondItem="6jL-uI-BNA" secondAttribute="leading" id="sbS-Cb-LW9"/>
+                                                <constraint firstItem="ds4-dO-Vlb" firstAttribute="top" secondItem="6jL-uI-BNA" secondAttribute="top" id="zni-R7-obc"/>
                                             </constraints>
-                                        </tableViewCellContentView>
+                                        </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="chanelTitle" destination="1ut-jr-QcI" id="iD9-xg-UKf"/>
-                                            <outlet property="imageview" destination="5fX-u5-2FZ" id="O15-pq-MRm"/>
-                                            <outlet property="numSubscriber" destination="MCJ-sE-w4M" id="wwg-MA-Ffp"/>
+                                            <outlet property="chanelTitle" destination="mMc-nA-kFO" id="NiV-pq-cqJ"/>
+                                            <outlet property="imageview" destination="ds4-dO-Vlb" id="hkn-Ls-WjL"/>
+                                            <outlet property="numberOfSubs" destination="xeA-60-lja" id="mP8-bG-sFt"/>
                                         </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qno-na-maq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Qno-na-maq" firstAttribute="trailing" secondItem="yFw-P2-H3u" secondAttribute="trailing" id="7iU-cB-v4U"/>
-                            <constraint firstItem="yFw-P2-H3u" firstAttribute="leading" secondItem="Qno-na-maq" secondAttribute="leading" id="G60-gt-tac"/>
-                            <constraint firstItem="yFw-P2-H3u" firstAttribute="top" secondItem="Qno-na-maq" secondAttribute="top" id="GvL-kM-YNY"/>
-                            <constraint firstItem="Qno-na-maq" firstAttribute="bottom" secondItem="yFw-P2-H3u" secondAttribute="bottom" id="pSK-ca-aYW"/>
+                            <constraint firstItem="Qno-na-maq" firstAttribute="bottom" secondItem="HNM-6y-Tj4" secondAttribute="bottom" id="7GL-zy-nLZ"/>
+                            <constraint firstItem="Qno-na-maq" firstAttribute="trailing" secondItem="HNM-6y-Tj4" secondAttribute="trailing" id="DMG-xL-jNc"/>
+                            <constraint firstItem="HNM-6y-Tj4" firstAttribute="top" secondItem="Qno-na-maq" secondAttribute="top" id="cRZ-jq-5db"/>
+                            <constraint firstItem="HNM-6y-Tj4" firstAttribute="leading" secondItem="Qno-na-maq" secondAttribute="leading" id="gIP-R4-Wvm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vdo-z7-gfa"/>
                     <connections>
-                        <outlet property="tableview" destination="yFw-P2-H3u" id="vdS-p9-skX"/>
+                        <outlet property="collectionView" destination="HNM-6y-Tj4" id="tR1-NQ-wP4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pO-aA-c0L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -161,7 +167,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="folder" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
