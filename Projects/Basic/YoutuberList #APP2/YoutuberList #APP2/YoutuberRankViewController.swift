@@ -12,7 +12,8 @@ class YoutuberRankViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
     
-    let youtuberList = YoutuberList.list
+//    let youtuberList = YoutuberList.list
+    let viewModel = YoutuberListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +22,12 @@ class YoutuberRankViewController: UIViewController {
     }
     
     private func urlToImage(url : URL , indexPath : IndexPath) -> UIImage {
-        let data = try! Data(contentsOf: youtuberList[indexPath.row].imagePath)
+        let data = try! Data(contentsOf: viewModel.getYoutuberByIndex(at: indexPath).imagePath)
         let image = UIImage(data: data)
         return image!
     }
+    
+   
 }
 
 
@@ -32,8 +35,9 @@ extension YoutuberRankViewController : UITableViewDelegate  {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as? YoutuberDetailViewController else { return }
         
-        vc.youtuber = youtuberList[indexPath.row]
-        
+//        vc.youtuber = youtuberList[indexPath.row]
+        vc.viewModel.youtuber = viewModel.getYoutuberByIndex(at: indexPath)
+    
         self.navigationController?.pushViewController(vc, animated: true)
         self.tableview.deselectRow(at: indexPath, animated: true)
     }
@@ -42,20 +46,26 @@ extension YoutuberRankViewController : UITableViewDelegate  {
 
 extension YoutuberRankViewController :  UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return youtuberList.count
+//        return youtuberList.count
+        return viewModel.numberOfYoutuber
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? YoutuberRankTableViewCell else
         { return UITableViewCell()}
+        print(indexPath.row)
         
-        cell.chanelTitle.text = youtuberList[indexPath.row].chanelName
-       
-        cell.imageview.image = urlToImage(url: youtuberList[indexPath.row].imagePath, indexPath: indexPath)
-        cell.numSubscriber.text = youtuberList[indexPath.row].numberOfSubs
+        let youtuber = viewModel.getYoutuberByIndex(at: indexPath)
+        cell.chanelTitle.text = youtuber.chanelName
+        cell.numSubscriber.text = youtuber.numberOfSubs
+        cell.imageview.image = urlToImage(url: youtuber.imagePath, indexPath: indexPath)
+        
+//        cell.chanelTitle.text = youtuberList[indexPath.row].chanelName
+//
+//        cell.imageview.image = urlToImage(url: youtuberList[indexPath.row].imagePath, indexPath: indexPath)
+//        cell.numSubscriber.text = youtuberList[indexPath.row].numberOfSubs
         
         return cell
     }
-    
 }

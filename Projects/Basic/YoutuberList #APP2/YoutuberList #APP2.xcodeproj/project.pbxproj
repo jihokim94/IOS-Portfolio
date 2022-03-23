@@ -16,6 +16,8 @@
 		A095C8D327E9C9B600A58805 /* YoutuberRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095C8D227E9C9B600A58805 /* YoutuberRankTableViewCell.swift */; };
 		A095C8D727E9F0B800A58805 /* Youtuber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095C8D627E9F0B800A58805 /* Youtuber.swift */; };
 		A095C8D927EA11AE00A58805 /* YoutuberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095C8D827EA11AE00A58805 /* YoutuberDetailViewController.swift */; };
+		A095C8E127EAF2E100A58805 /* YoutubeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095C8E027EAF2E100A58805 /* YoutubeViewModel.swift */; };
+		A095C8E327EAF8F000A58805 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095C8E227EAF8F000A58805 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		A095C8D227E9C9B600A58805 /* YoutuberRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberRankTableViewCell.swift; sourceTree = "<group>"; };
 		A095C8D627E9F0B800A58805 /* Youtuber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Youtuber.swift; sourceTree = "<group>"; };
 		A095C8D827EA11AE00A58805 /* YoutuberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberDetailViewController.swift; sourceTree = "<group>"; };
+		A095C8E027EAF2E100A58805 /* YoutubeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeViewModel.swift; sourceTree = "<group>"; };
+		A095C8E227EAF8F000A58805 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		A095C8BD27E9BFB000A58805 /* YoutuberList #APP2 */ = {
 			isa = PBXGroup;
 			children = (
+				A095C8DF27EAF21900A58805 /* ViewModel */,
 				A095C8DD27EA196600A58805 /* View */,
 				A095C8DC27EA196300A58805 /* Controller */,
 				A095C8DA27EA195000A58805 /* Model */,
@@ -106,6 +111,15 @@
 				A095C8D227E9C9B600A58805 /* YoutuberRankTableViewCell.swift */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		A095C8DF27EAF21900A58805 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A095C8E027EAF2E100A58805 /* YoutubeViewModel.swift */,
+				A095C8E227EAF8F000A58805 /* DetailViewModel.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,10 +194,12 @@
 			files = (
 				A095C8D327E9C9B600A58805 /* YoutuberRankTableViewCell.swift in Sources */,
 				A095C8C327E9BFB000A58805 /* YoutuberRankViewController.swift in Sources */,
+				A095C8E127EAF2E100A58805 /* YoutubeViewModel.swift in Sources */,
 				A095C8BF27E9BFB000A58805 /* AppDelegate.swift in Sources */,
 				A095C8D927EA11AE00A58805 /* YoutuberDetailViewController.swift in Sources */,
 				A095C8D727E9F0B800A58805 /* Youtuber.swift in Sources */,
 				A095C8C127E9BFB000A58805 /* SceneDelegate.swift in Sources */,
+				A095C8E327EAF8F000A58805 /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
