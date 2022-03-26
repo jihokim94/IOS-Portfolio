@@ -9,15 +9,57 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var tasks = [Task]()
+    var tasks = [Task]() {
+        didSet {
+            self.saveTasks()
+        }
+    }
     
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loadTasks()
         self.tableview.dataSource = self
-//        self.tableview.delegate = self
+        //        self.tableview.delegate = self
     }
+    
+    
+    private func saveTasks() {
+        var data : [[String : Any]] = self.tasks.map {
+            return [ "title" : $0.title ,"done" : $0.done ]
+        }
+        let userDefaults = UserDefaults.standard
+        //유저디폴츠에 저장 하는 법
+        /*
+         value : 저장할 데이터를 넣어야함
+        forKey : 저장 데이터의 키를 지정해 줄수있음 추후에 이 키를 통해 데이터 뽑을거임
+         */
+        userDefaults.set(data, forKey: "tasks")
+    }
+    
+    private func loadTasks() {
+        let userDefaults = UserDefaults.standard
+        // 저장할 당시 set에 지정한 Key를 통해 오브젝트를 뽑을수 있다.
+        // Returns the object associated with the specified key.
+        // 데이터 유무 확인 없음 리턴
+        guard let data = userDefaults.object(forKey: "tasks") as? [[String : Any]] else { return }
+        
+        //
+//        self.tasks = data.compactMap({ taskList in
+//            guard let title = taskList["title"] as? String else { return nil }
+//            guard let done = taskList["done"] as? Bool else { return nil }
+//            return Task(title: title, done: done)
+//        })
+        
+        self.tasks = data.compactMap {
+            guard let title = $0["title"] as? String else {return nil}
+            guard let done = $0["done"] as? Bool else {return nil}
+            return Task(title: title, done: done)
+        }
+        
+    }
+    
     @IBAction func tapEditButton(_ sender: UIBarButtonItem) {
         
     }
@@ -68,7 +110,7 @@ extension ViewController : UITableViewDataSource {
         } else {
             cell.accessoryType = .none
         }
-       return cell
+        return cell
     }
     
     
