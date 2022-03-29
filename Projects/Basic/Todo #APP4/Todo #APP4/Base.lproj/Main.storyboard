@@ -38,6 +38,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -62,6 +63,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editBarButton" destination="56R-xF-QLV" id="gNr-uk-Dd8"/>
                         <outlet property="tableview" destination="c4N-97-EW8" id="uaP-Hw-hdo"/>
                     </connections>
                 </viewController>

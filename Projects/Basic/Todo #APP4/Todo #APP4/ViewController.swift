@@ -14,6 +14,9 @@ class ViewController: UIViewController {
             self.saveTasks()
         }
     }
+    var doneButton : UIBarButtonItem?
+    
+    @IBOutlet weak var editBarButton: UIBarButtonItem!
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -21,7 +24,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.loadTasks()
         self.tableview.dataSource = self
-        //        self.tableview.delegate = self
+        self.tableview.delegate = self
+        self.doneButton =  UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tapDoneButton))
+        
+        
+    }
+    
+    @objc private func tapDoneButton() {
+        self.navigationItem.leftBarButtonItem = self.editBarButton
+        self.tableview.setEditing(false, animated: true)
+        
     }
     
     
@@ -33,7 +45,7 @@ class ViewController: UIViewController {
         //유저디폴츠에 저장 하는 법
         /*
          value : 저장할 데이터를 넣어야함
-        forKey : 저장 데이터의 키를 지정해 줄수있음 추후에 이 키를 통해 데이터 뽑을거임
+         forKey : 저장 데이터의 키를 지정해 줄수있음 추후에 이 키를 통해 데이터 뽑을거임
          */
         userDefaults.set(data, forKey: "tasks")
     }
@@ -46,11 +58,11 @@ class ViewController: UIViewController {
         guard let data = userDefaults.object(forKey: "tasks") as? [[String : Any]] else { return }
         
         //
-//        self.tasks = data.compactMap({ taskList in
-//            guard let title = taskList["title"] as? String else { return nil }
-//            guard let done = taskList["done"] as? Bool else { return nil }
-//            return Task(title: title, done: done)
-//        })
+        //        self.tasks = data.compactMap({ taskList in
+        //            guard let title = taskList["title"] as? String else { return nil }
+        //            guard let done = taskList["done"] as? Bool else { return nil }
+        //            return Task(title: title, done: done)
+        //        })
         
         self.tasks = data.compactMap {
             guard let title = $0["title"] as? String else {return nil}
@@ -61,6 +73,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapEditButton(_ sender: UIBarButtonItem) {
+        guard !tasks.isEmpty else { return } // 태스크없으면 에딧모드 안되게하기
+        self.navigationItem.leftBarButtonItem = self.doneButton
+        self.tableview.setEditing(true, animated: true)
         
     }
     
@@ -117,3 +132,43 @@ extension ViewController : UITableViewDataSource {
 }
 
 
+extension ViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedRow = indexPath.row
+        
+        var task = self.tasks[selectedRow]
+        
+        // 클릭시 태스크의 상태가 변화되게 하기
+        task.done = !task.done
+        // 다시 태스크 업데이트해서 넣기
+        self.tasks[selectedRow] = task
+        
+        // 특정 로우셀을 애니메이션과 함께 리로드하기
+        self.tableview.reloadRows(at: [indexPath], with: .automatic)
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            self.tasks.remove(at: indexPath.row)
+            self.tableview.deleteRows(at: [indexPath], with: .automatic)
+            
+        }
+        
+        if tasks.isEmpty {
+            tapDoneButton()
+        }
+        
+    }
+    // 테이블의 셀 위치를 변경 가능하게 한다.
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let moveTask = self.tasks[sourceIndexPath.row]
+        self.tasks.remove(at: sourceIndexPath.row)
+        self.tasks.insert(moveTask, at: destinationIndexPath.row)
+        
+        
+    }
+}
