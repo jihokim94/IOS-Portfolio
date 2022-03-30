@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     }
     var doneButton : UIBarButtonItem?
     
-    @IBOutlet weak var editBarButton: UIBarButtonItem!
+    @IBOutlet var editBarButton: UIBarButtonItem!
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         
     }
     
-    @objc private func tapDoneButton() {
+    @objc func tapDoneButton() {
         self.navigationItem.leftBarButtonItem = self.editBarButton
         self.tableview.setEditing(false, animated: true)
         
