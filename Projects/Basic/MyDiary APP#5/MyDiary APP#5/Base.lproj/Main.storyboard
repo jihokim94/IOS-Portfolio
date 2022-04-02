@@ -204,7 +204,7 @@
                     <connections>
                         <outlet property="confirmButton" destination="90Y-2S-2aA" id="j5k-QJ-sH5"/>
                         <outlet property="contentsTextView" destination="UVd-Pc-QOf" id="Fyo-RP-61C"/>
-                        <outlet property="dataTextField" destination="9KQ-FZ-cQb" id="MxD-Me-NRk"/>
+                        <outlet property="dateTextField" destination="9KQ-FZ-cQb" id="MxD-Me-NRk"/>
                         <outlet property="titleTextField" destination="Xuq-d6-V0y" id="syS-82-w0q"/>
                     </connections>
                 </viewController>
