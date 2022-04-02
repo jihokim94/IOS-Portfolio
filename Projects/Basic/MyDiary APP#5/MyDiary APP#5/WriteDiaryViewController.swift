@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WriteDiaryViewController: UIViewController {
+class WriteDiaryViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentsTextView: UITextView!
@@ -23,6 +23,37 @@ class WriteDiaryViewController: UIViewController {
         super.viewDidLoad()
         self.configureContentsTextView()
         self.configureDatePicker()
+        self.configureTextFieldValidation()
+        self.contentsTextView.delegate = self
+        
+        
+        // validation을 위한 등록버튼 비활성화
+        self.confirmButton.isEnabled = false
+    }
+    
+  
+    // 아래 메소드들을 통해 인풋값의 변화가 있을시 validationDatas() 메소드로 유효성 체크 할거야~~ ㅇㅋ?
+    private func configureTextFieldValidation() {
+        // .editingchanged => 변경 될때 마다 셀럭터 함수가 호출될거임
+        self.titleTextField.addTarget(self, action: #selector(titleTextFieldDidChange(_:)), for: .editingChanged)
+        self.dateTextField.addTarget(self, action: #selector(dateTextFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    @objc private func dateTextFieldDidChange (_ textfield : UITextField){
+        self.validationDatas()
+    }
+    @objc private func titleTextFieldDidChange (_ textfield : UITextField){
+        self.validationDatas()
+    }
+
+    func textViewDidChange(_ textView: UITextView) {
+        self.validationDatas()
+    }
+    // 바로 위까지 validation
+    
+    private func validationDatas() {
+        // 각 인풋 값들중 하나라도 false를 리턴하면 컨펌버튼이 언이네이블드 될거니 밑에 처럼 설정 화면 이지~
+        self.confirmButton.isEnabled = !(self.titleTextField.text?.isEmpty ?? true) && !(self.contentsTextView.text.isEmpty ) && !(self.dateTextField.text?.isEmpty ?? true)
     }
     
     private func configureContentsTextView() {
@@ -35,8 +66,12 @@ class WriteDiaryViewController: UIViewController {
         self.datePicker.locale = Locale(identifier: "ko_KR")
         // valueChange 할때 마다 셀럭터 함수가 호출 된다.
         self.datePicker.addTarget(self, action: #selector(datePickerValueDidChange(_:)), for: .valueChanged)
+        
+        // date textfield에 액션을 추가로 추가해주면 위에 validation 메소드가 작동되게 할수 잇음.
+        self.dateTextField.sendActions(for: .editingChanged)
         // dateTextField를 누르면 데이트 픽커가 나온다.
         self.dateTextField.inputView = self.datePicker
+        
     }
     
     @objc private func datePickerValueDidChange (_ datepicker : UIDatePicker ){
@@ -48,8 +83,8 @@ class WriteDiaryViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // 빈공간 터치시 touchesBegan메소드가 실행 되며 아래와 같이 datePikerView의 View의 editing 상태를 종료함
-        self.datePicker.endEditing(true)
+        // 빈공간 터치시 touchesBegan메소드가 실행 되며 아래와 같이 view의 editing 상태 resign to the first responder
+        self.view.endEditing(true)
         
     }
     
