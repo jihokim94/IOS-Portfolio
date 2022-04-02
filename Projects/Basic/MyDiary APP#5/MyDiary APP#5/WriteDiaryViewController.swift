@@ -7,6 +7,12 @@
 
 import UIKit
 
+// 1. 델리게이트 프로토콜 생성
+protocol WriteDiaryViewDelegate : AnyObject {
+    func didRegisterDiary(diary : Diary)
+}
+
+
 class WriteDiaryViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -18,6 +24,9 @@ class WriteDiaryViewController: UIViewController, UITextViewDelegate {
     
     private let datePicker = UIDatePicker()
     private var diaryDate : Date?
+    
+    // 2. delegate 프로퍼티 생성
+    weak var delegate : WriteDiaryViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +98,12 @@ class WriteDiaryViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func tapConfirmButton(_ sender: UIBarButtonItem) {
+        guard let title = titleTextField.text else { return }
+        guard let contents = contentsTextView.text else { return }
+        guard let date = self.diaryDate else { return }
+        let diary = Diary(title: title, contents: contents, date: date, isStar: false)
+        self.delegate?.didRegisterDiary(diary: diary)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
