@@ -35,75 +35,75 @@ class WriteDiaryViewController: UIViewController, UITextViewDelegate {
         self.configureTextFieldValidation()
         self.contentsTextView.delegate = self
         
-        
         // validation을 위한 등록버튼 비활성화
         self.confirmButton.isEnabled = false
     }
-    
-  
-    // 아래 메소드들을 통해 인풋값의 변화가 있을시 validationDatas() 메소드로 유효성 체크 할거야~~ ㅇㅋ?
-    private func configureTextFieldValidation() {
-        // .editingchanged => 변경 될때 마다 셀럭터 함수가 호출될거임
-        self.titleTextField.addTarget(self, action: #selector(titleTextFieldDidChange(_:)), for: .editingChanged)
-        self.dateTextField.addTarget(self, action: #selector(dateTextFieldDidChange(_:)), for: .editingChanged)
-    }
-    
-    @objc private func dateTextFieldDidChange (_ textfield : UITextField){
-        self.validationDatas()
-    }
-    @objc private func titleTextFieldDidChange (_ textfield : UITextField){
-        self.validationDatas()
+        
+        
+        // 아래 메소드들을 통해 인풋값의 변화가 있을시 validationDatas() 메소드로 유효성 체크 할거야~~ ㅇㅋ?
+        private func configureTextFieldValidation() {
+            // .editingchanged => 변경 될때 마다 셀럭터 함수가 호출될거임
+            self.titleTextField.addTarget(self, action: #selector(titleTextFieldDidChange(_:)), for: .editingChanged)
+            self.dateTextField.addTarget(self, action: #selector(dateTextFieldDidChange(_:)), for: .editingChanged)
+        }
+        
+        @objc private func dateTextFieldDidChange (_ textfield : UITextField){
+            self.validationDatas()
+        }
+        @objc private func titleTextFieldDidChange (_ textfield : UITextField){
+            self.validationDatas()
+        }
+        
+        func textViewDidChange(_ textView: UITextView) {
+            self.validationDatas()
+        }
+        // 바로 위까지 validation
+        
+        private func validationDatas() {
+            // 각 인풋 값들중 하나라도 false를 리턴하면 컨펌버튼이 언이네이블드 될거니 밑에 처럼 설정 화면 이지~
+            self.confirmButton.isEnabled = !(self.titleTextField.text?.isEmpty ?? true) && !(self.contentsTextView.text.isEmpty ) && !(self.dateTextField.text?.isEmpty ?? true)
+        }
+        
+        private func configureContentsTextView() {
+            self.contentsTextView.layer.borderWidth = 1
+            self.contentsTextView.layer.borderColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1.0).cgColor
+        }
+        private func configureDatePicker() {
+            self.datePicker.datePickerMode = .date
+            self.datePicker.preferredDatePickerStyle = .wheels
+            self.datePicker.locale = Locale(identifier: "ko_KR")
+            // date textfield에 액션을 추가로 추가해주면 위에 validation 메소드가 작동되게 할수 잇음.
+            self.dateTextField.sendActions(for: .editingChanged)
+            // valueChange 할때 마다 셀럭터 함수가 호출 된다.
+            self.datePicker.addTarget(self, action: #selector(datePickerValueDidChange(_:)), for: .valueChanged)
+            // dateTextField를 누르면 데이트 픽커가 나온다.
+            self.dateTextField.inputView = self.datePicker
+            
+        }
+        
+        @objc private func datePickerValueDidChange (_ datepicker : UIDatePicker ){
+            let fommatter = DateFormatter()
+            fommatter.locale = Locale(identifier: "ko_KR")
+            fommatter.dateFormat = "yyyy년 MM월 dd일(EEEEE)"
+            self.diaryDate = datepicker.date
+            self.dateTextField.text = fommatter.string(from: datepicker.date)
+        }
+        
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            // 빈공간 터치시 touchesBegan메소드가 실행 되며 아래와 같이 view의 editing 상태 resign to the first responder
+            self.view.endEditing(true)
+            
+        }
+        
+        @IBAction func tapConfirmButton(_ sender: UIBarButtonItem) {
+            guard let title = titleTextField.text else { return }
+            guard let contents = contentsTextView.text else { return }
+            guard let date = self.diaryDate else { return }
+            let diary = Diary(title: title, contents: contents, date: date, isStar: false)
+            self.delegate?.didRegisterDiary(diary: diary)
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        
     }
 
-    func textViewDidChange(_ textView: UITextView) {
-        self.validationDatas()
-    }
-    // 바로 위까지 validation
-    
-    private func validationDatas() {
-        // 각 인풋 값들중 하나라도 false를 리턴하면 컨펌버튼이 언이네이블드 될거니 밑에 처럼 설정 화면 이지~
-        self.confirmButton.isEnabled = !(self.titleTextField.text?.isEmpty ?? true) && !(self.contentsTextView.text.isEmpty ) && !(self.dateTextField.text?.isEmpty ?? true)
-    }
-    
-    private func configureContentsTextView() {
-        self.contentsTextView.layer.borderWidth = 1
-        self.contentsTextView.layer.borderColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1.0).cgColor
-    }
-    private func configureDatePicker() {
-        self.datePicker.datePickerMode = .date
-        self.datePicker.preferredDatePickerStyle = .wheels
-        self.datePicker.locale = Locale(identifier: "ko_KR")
-        // valueChange 할때 마다 셀럭터 함수가 호출 된다.
-        self.datePicker.addTarget(self, action: #selector(datePickerValueDidChange(_:)), for: .valueChanged)
-        
-        // date textfield에 액션을 추가로 추가해주면 위에 validation 메소드가 작동되게 할수 잇음.
-        self.dateTextField.sendActions(for: .editingChanged)
-        // dateTextField를 누르면 데이트 픽커가 나온다.
-        self.dateTextField.inputView = self.datePicker
-        
-    }
-    
-    @objc private func datePickerValueDidChange (_ datepicker : UIDatePicker ){
-        let fommatter = DateFormatter()
-        fommatter.locale = Locale(identifier: "ko_KR")
-        fommatter.dateFormat = "yyyy년 MM월 dd일(EEEEE)"
-        self.diaryDate = datepicker.date
-        self.dateTextField.text = fommatter.string(from: datepicker.date)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // 빈공간 터치시 touchesBegan메소드가 실행 되며 아래와 같이 view의 editing 상태 resign to the first responder
-        self.view.endEditing(true)
-        
-    }
-    
-    @IBAction func tapConfirmButton(_ sender: UIBarButtonItem) {
-        guard let title = titleTextField.text else { return }
-        guard let contents = contentsTextView.text else { return }
-        guard let date = self.diaryDate else { return }
-        let diary = Diary(title: title, contents: contents, date: date, isStar: false)
-        self.delegate?.didRegisterDiary(diary: diary)
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-}
