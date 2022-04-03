@@ -9,7 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private var diaryList : [Diary] = []
+    private var diaryList : [Diary] = [] {
+        didSet {
+            self.saveDiaryList()
+        }
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? WriteDiaryViewController {
@@ -21,15 +26,42 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        fetchDiaryList()
+        
     }
     
     private func configureCollectionView() {
+        
         self.collectionview.dataSource = self
         self.collectionview.delegate = self
         //The custom distance that the content view is inset from the safe area or scroll view edges.
         // 번역 : safe area or scroll view 가장자리에서 삽입되는 사용자 지정 거리입니다.
         self.collectionview.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
+    
+    private func saveDiaryList() {
+        let data = self.diaryList.map { diary in
+            ["title" : diary.title , "contents" : diary.contents , "date" : diary.date , "isStar" : diary.isStar]
+        }
+        
+        let userdefaults = UserDefaults.standard
+        userdefaults.set(data, forKey: "diaryList")
+    }
+    
+    private func fetchDiaryList() {
+        let userdefaults = UserDefaults.standard
+        if let data = userdefaults.object(forKey: "diaryList") as? [[String : Any]] {
+            self.diaryList = data.compactMap {
+                guard let title = $0["title"] as? String else {return nil}
+                guard let contents = $0["contents"] as? String else {return nil}
+                guard let date  = $0["date"] as? Date else {return nil}
+                guard let isStar = $0["isStar"] as? Bool else {return nil}
+                
+                return Diary(title: title, contents: contents, date: date, isStar: isStar)
+            }
+        }
+    }
+    
 }
 
 
@@ -71,6 +103,7 @@ extension ViewController : UICollectionViewDelegateFlowLayout {
 extension ViewController : WriteDiaryViewDelegate {
     func didRegisterDiary(diary: Diary) {
         self.diaryList.append(diary)
+        debugPrint(self.diaryList)
         self.collectionview.reloadData()
     }
 }
