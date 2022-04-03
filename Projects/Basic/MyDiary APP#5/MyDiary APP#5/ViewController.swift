@@ -60,6 +60,7 @@ class ViewController: UIViewController {
                 return Diary(title: title, contents: contents, date: date, isStar: isStar)
             }
         }
+        self.diaryList.sort(by: { return $0.date < $1.date }) // 내림차순 정렬
     }
     
 }
