@@ -38,6 +38,7 @@ class WriteDiaryViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.configureContentsTextView()
         self.configureDatePicker()
         self.configureTextFieldValidation()
@@ -54,6 +55,7 @@ class WriteDiaryViewController: UIViewController, UITextViewDelegate {
             self.titleTextField.text = diary.title
             self.contentsTextView.text = diary.contents
             self.dateTextField.text = self.dateToString(date: diary.date)
+            self.diaryDate = diary.date
             self.confirmButton.title = "수정"
             break
         default:
@@ -122,15 +124,18 @@ class WriteDiaryViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func tapConfirmButton(_ sender: UIBarButtonItem) {
-        guard let title = titleTextField.text else { return }
-        guard let contents = contentsTextView.text else { return }
+        
+        guard let title = titleTextField.text else { return  }
+        guard let contents = contentsTextView.text else { return  }
         guard let date = self.diaryDate else { return }
+
         let diary = Diary(title: title, contents: contents, date: date, isStar: false)
-    
+        
         switch self.diaryMode {
         case .new:
             self.delegate?.didRegisterDiary(diary: diary)
         case let .edit(indexpath, _):
+            print("a")
             NotificationCenter.default.post(name: Notification.Name("editDiary"), object: diary, userInfo: ["indexpath.item" : indexpath.item])
         }
         self.navigationController?.popViewController(animated: true)
