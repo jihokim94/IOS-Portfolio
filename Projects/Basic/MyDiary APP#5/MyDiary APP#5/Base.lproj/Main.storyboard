@@ -127,7 +127,7 @@
         <!--일기작성-->
         <scene sceneID="Emh-ff-sMb">
             <objects>
-                <viewController id="dYH-L9-P05" customClass="WriteDiaryViewController" customModule="MyDiary_APP_5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WriteDiaryViewController" id="dYH-L9-P05" customClass="WriteDiaryViewController" customModule="MyDiary_APP_5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PV4-E5-Azr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
