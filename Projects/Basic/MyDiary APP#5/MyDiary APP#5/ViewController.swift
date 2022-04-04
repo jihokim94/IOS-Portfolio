@@ -31,7 +31,6 @@ class ViewController: UIViewController {
     }
     
     private func configureCollectionView() {
-        
         self.collectionview.dataSource = self
         self.collectionview.delegate = self
         //The custom distance that the content view is inset from the safe area or scroll view edges.
@@ -61,6 +60,7 @@ class ViewController: UIViewController {
             }
         }
         self.diaryList.sort(by: { return $0.date < $1.date }) // 내림차순 정렬
+        debugPrint(self.diaryList)
     }
     
 }
@@ -101,10 +101,31 @@ extension ViewController : UICollectionViewDelegateFlowLayout {
     }
 }
 
+
+extension ViewController :UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let vc = self.storyboard?.instantiateViewController(identifier: "DiaryDetailViewController") as? DiaryDetailViewController else { return }
+        vc.diary = self.diaryList[indexPath.item]
+        vc.indexpath = indexPath
+        vc.delegate = self
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        //        self.collectionview.deselectItem(at: [indexPath.item], animated: true)
+    }
+}
+
+
 extension ViewController : WriteDiaryViewDelegate {
     func didRegisterDiary(diary: Diary) {
         self.diaryList.append(diary)
         debugPrint(self.diaryList)
         self.collectionview.reloadData()
+    }
+}
+
+extension ViewController : DetailViewDelegate {
+    func didDeleteDiary(indexpath: IndexPath) {
+        self.diaryList.remove(at: indexpath.item)
+        self.collectionview.deleteItems(at: [indexpath])
     }
 }
