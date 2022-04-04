@@ -98,8 +98,6 @@ class WriteDiaryViewController: UIViewController, UITextViewDelegate {
         self.datePicker.datePickerMode = .date
         self.datePicker.preferredDatePickerStyle = .wheels
         self.datePicker.locale = Locale(identifier: "ko_KR")
-        // date textfield에 액션을 추가로 추가해주면 위에 validation 메소드가 작동되게 할수 잇음.
-        self.dateTextField.sendActions(for: .editingChanged)
         // valueChange 할때 마다 셀럭터 함수가 호출 된다.
         self.datePicker.addTarget(self, action: #selector(datePickerValueDidChange(_:)), for: .valueChanged)
         // dateTextField를 누르면 데이트 픽커가 나온다.
@@ -113,6 +111,8 @@ class WriteDiaryViewController: UIViewController, UITextViewDelegate {
         fommatter.dateFormat = "yyyy년 MM월 dd일(EEEEE)"
         self.diaryDate = datepicker.date
         self.dateTextField.text = fommatter.string(from: datepicker.date)
+        // date textfield에 액션을 추가로 추가해주면 위에 validation 메소드가 작동되게 할수 잇음.
+        self.dateTextField.sendActions(for: .editingChanged)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
