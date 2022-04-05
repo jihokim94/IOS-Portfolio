@@ -7,10 +7,10 @@
 
 import UIKit
 
-protocol DetailViewDelegate : AnyObject {
-    func didDeleteDiary(indexpath : IndexPath)
-    func didSelectStar(indexpath : IndexPath , isStar : Bool)
-}
+//protocol DetailViewDelegate : AnyObject {
+//    func didDeleteDiary(indexpath : IndexPath)
+//    func didSelectStar(indexpath : IndexPath , isStar : Bool)
+//}
 
 class DiaryDetailViewController: UIViewController {
 
@@ -23,7 +23,7 @@ class DiaryDetailViewController: UIViewController {
     
     var starButton : UIBarButtonItem?
     
-    weak var delegate : DetailViewDelegate?
+//    weak var delegate : DetailViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,14 +61,18 @@ class DiaryDetailViewController: UIViewController {
         // 토글시 값변경
         self.diary?.isStar = !isStar
         // 델리게이트로 데이터 루트vc 로 전달
-        self.delegate?.didSelectStar(indexpath: indexPath , isStar: self.diary?.isStar ?? false)
+        NotificationCenter.default.post(
+            name: NSNotification.Name("starDiary"),
+            object: ["diary" : self.diary ,"isStar" : self.diary?.isStar ?? false , "indexPath" : indexPath],
+            userInfo: nil)
+//        self.delegate?.didSelectStar(indexpath: indexPath , isStar: self.diary?.isStar ?? false)
     }
+    
     
     @objc private func editDiaryNotification (_ notification : Notification) {
         guard let diary = notification.object as? Diary else { return }
         guard let indexpathItem = notification.userInfo?["indexpath.item"] as? Int else { return }
         self.diary = diary
-        
         self.configureDetailView()
         
     }
@@ -92,7 +96,9 @@ class DiaryDetailViewController: UIViewController {
     
     @IBAction func tapDeleteButton(_ sender: UIButton) {
         guard let indexPath = self.indexpath else { return }
-        self.delegate?.didDeleteDiary(indexpath: indexPath)
+        
+        NotificationCenter.default.post(name:Notification.Name("deleteDiary"), object: indexPath, userInfo: nil)
+//        self.delegate?.didDeleteDiary(indexpath: indexPath)
         self.navigationController?.popViewController(animated: true)
     }
     

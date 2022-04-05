@@ -28,6 +28,8 @@ class ViewController: UIViewController {
         configureCollectionView()
         fetchDiaryList()
         NotificationCenter.default.addObserver(self, selector: #selector(editDiaryNotification(_:)), name: NSNotification.Name(rawValue: "editDiary"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(starDiaryNotification(_:)), name: NSNotification.Name("starDiary"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deleteDiaryNotification(_:)), name: NSNotification.Name("deleteDiary"), object: nil)
         
     }
     
@@ -38,6 +40,19 @@ class ViewController: UIViewController {
         self.diaryList.sort(by: { $0.date > $1.date })
    
         self.collectionview.reloadData()
+    }
+    
+    @objc private func starDiaryNotification (_ notification : Notification) {
+        guard let data = notification.object as? [String : Any] else { return }
+        guard let isStar = data["isStar"] as? Bool else { return }
+        guard let indexpath = data["indexPath"] as? IndexPath else { return }
+        
+        self.diaryList[indexpath.item].isStar = isStar
+    }
+    @objc private func deleteDiaryNotification(_ notification : Notification) {
+        guard let indexPath = notification.object as? IndexPath else { return }
+        self.diaryList.remove(at: indexPath.item)
+        self.collectionview.deleteItems(at: [indexPath])
     }
     
     private func configureCollectionView() {
@@ -117,7 +132,7 @@ extension ViewController :UICollectionViewDelegate {
         guard let vc = self.storyboard?.instantiateViewController(identifier: "DiaryDetailViewController") as? DiaryDetailViewController else { return }
         vc.diary = self.diaryList[indexPath.item]
         vc.indexpath = indexPath
-        vc.delegate = self
+//        vc.delegate = self
         
         self.navigationController?.pushViewController(vc, animated: true)
         //        self.collectionview.deselectItem(at: [indexPath.item], animated: true)
@@ -133,13 +148,13 @@ extension ViewController : WriteDiaryViewDelegate {
     }
 }
 
-extension ViewController : DetailViewDelegate {
-    func didSelectStar(indexpath: IndexPath, isStar: Bool) {
-        self.diaryList[indexpath.item].isStar = isStar
-    }
+//extension ViewController : DetailViewDelegate {
+//    func didSelectStar(indexpath: IndexPath, isStar: Bool) {
+//        self.diaryList[indexpath.item].isStar = isStar
+//    }
     
-    func didDeleteDiary(indexpath: IndexPath) {
-        self.diaryList.remove(at: indexpath.item)
-        self.collectionview.deleteItems(at: [indexpath])
-    }
-}
+//    func didDeleteDiary(indexpath: IndexPath) {
+//        self.diaryList.remove(at: indexpath.item)
+//        self.collectionview.deleteItems(at: [indexpath])
+//    }
+//}

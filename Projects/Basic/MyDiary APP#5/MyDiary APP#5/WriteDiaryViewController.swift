@@ -129,12 +129,14 @@ class WriteDiaryViewController: UIViewController, UITextViewDelegate {
         guard let contents = contentsTextView.text else { return  }
         guard let date = self.diaryDate else { return }
 
-        let diary = Diary(title: title, contents: contents, date: date, isStar: false)
+        
         
         switch self.diaryMode {
         case .new:
+            let diary = Diary(title: title, contents: contents, date: date, isStar: false)
             self.delegate?.didRegisterDiary(diary: diary)
-        case let .edit(indexpath, _):
+        case let .edit(indexpath, diary):
+            let diary = Diary(title: title, contents: contents, date: date, isStar: diary.isStar)
             print("a")
             NotificationCenter.default.post(name: Notification.Name("editDiary"), object: diary, userInfo: ["indexpath.item" : indexpath.item])
         }
