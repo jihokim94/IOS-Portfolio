@@ -9,11 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func tapLocationButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func tapSearchButton(_ sender: UIButton) {
+    }
+    @IBAction func cityTextField(_ sender: UITextField) {
+    }
 }
 
