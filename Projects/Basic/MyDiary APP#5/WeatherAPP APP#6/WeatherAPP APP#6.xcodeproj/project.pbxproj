@@ -68,7 +68,8 @@
 		A0107BD4280D252800F9221A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A0109B8428095BE00036DF20 /* Main.storyboard */,
+				A0887A12280D4F6E0075AFB1 /* StoryBoard */,
+				A0107BD1280D24FD00F9221A /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -94,7 +95,6 @@
 			children = (
 				A0107BD4280D252800F9221A /* View */,
 				A0107BD3280D251600F9221A /* Controller */,
-				A0107BD1280D24FD00F9221A /* Cell */,
 				A0107BD2280D250600F9221A /* Model */,
 				A0109B7E28095BE00036DF20 /* AppDelegate.swift */,
 				A0109B8028095BE00036DF20 /* SceneDelegate.swift */,
@@ -103,6 +103,14 @@
 				A0109B8C28095BE10036DF20 /* Info.plist */,
 			);
 			path = "WeatherAPP APP#6";
+			sourceTree = "<group>";
+		};
+		A0887A12280D4F6E0075AFB1 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				A0109B8428095BE00036DF20 /* Main.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

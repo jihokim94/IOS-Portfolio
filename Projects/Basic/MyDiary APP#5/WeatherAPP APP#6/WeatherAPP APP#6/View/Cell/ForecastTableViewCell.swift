@@ -14,7 +14,13 @@ class ForecastTableViewCell: UITableViewCell {
         // Initialization code
         backgroundColor = .clear
     }
-
+    @IBOutlet weak var forecastDate: UILabel!
+    @IBOutlet weak var forecastTime: UILabel!
+    @IBOutlet weak var forecastImage: UIImageView!
+    
+    @IBOutlet weak var forecastStatus: UILabel!
+    @IBOutlet weak var forecastTemp: UILabel!
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

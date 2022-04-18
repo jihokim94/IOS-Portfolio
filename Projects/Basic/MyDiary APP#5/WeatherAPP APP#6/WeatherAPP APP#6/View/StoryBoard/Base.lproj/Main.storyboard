@@ -71,8 +71,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="166"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rgM-7r-pm2">
-                                                            <rect key="frame" x="25" y="16" width="158" height="144"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunrise" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rgM-7r-pm2">
+                                                            <rect key="frame" x="25" y="14.5" width="158" height="143.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="158" id="UZW-uh-j9G"/>
                                                             </constraints>
@@ -111,6 +111,12 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="currentCity" destination="UZG-30-Ddk" id="jZl-lt-XH4"/>
+                                                    <outlet property="currentImage" destination="rgM-7r-pm2" id="NNX-ER-ozo"/>
+                                                    <outlet property="currentStatus" destination="DA2-Vt-XWO" id="O2X-oU-xwd"/>
+                                                    <outlet property="currentTemp" destination="RPV-gB-ZdM" id="IB1-6b-iSW"/>
+                                                </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="forecastCell" rowHeight="75" id="btq-qx-i1y" customClass="ForecastTableViewCell" customModule="WeatherAPP_APP_6" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="190.5" width="414" height="75"/>
@@ -178,6 +184,13 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="forecastDate" destination="iNA-Bi-xej" id="zhX-5p-K0b"/>
+                                                    <outlet property="forecastImage" destination="xVu-tr-gJu" id="4sR-cw-GEn"/>
+                                                    <outlet property="forecastStatus" destination="br4-s6-Kb0" id="eS2-Kx-Xvd"/>
+                                                    <outlet property="forecastTemp" destination="4Iq-Qa-YFC" id="ZwQ-Jn-gov"/>
+                                                    <outlet property="forecastTime" destination="Jon-Mq-SOS" id="nLi-xE-lXG"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <sections/>
@@ -224,6 +237,7 @@
     <resources>
         <image name="location.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="sunrise" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
