@@ -15,6 +15,8 @@
 		A0109B8628095BE00036DF20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0109B8428095BE00036DF20 /* Main.storyboard */; };
 		A0109B8828095BE10036DF20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0109B8728095BE10036DF20 /* Assets.xcassets */; };
 		A0109B8B28095BE10036DF20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0109B8928095BE10036DF20 /* LaunchScreen.storyboard */; };
+		A08FAEE2280E6CE500397E6C /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08FAEE1280E6CE500397E6C /* CurrentWeather.swift */; };
+		A08FAEE4280FCEC400397E6C /* ForecastWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08FAEE3280FCEC400397E6C /* ForecastWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		A0109B8728095BE10036DF20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0109B8A28095BE10036DF20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0109B8C28095BE10036DF20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A08FAEE1280E6CE500397E6C /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		A08FAEE3280FCEC400397E6C /* ForecastWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 		A0107BD2280D250600F9221A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A08FAEE1280E6CE500397E6C /* CurrentWeather.swift */,
+				A08FAEE3280FCEC400397E6C /* ForecastWeather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,8 +191,10 @@
 			files = (
 				A0109B8328095BE00036DF20 /* ViewController.swift in Sources */,
 				A0107BDA280D25C800F9221A /* ForecastTableViewCell.swift in Sources */,
+				A08FAEE4280FCEC400397E6C /* ForecastWeather.swift in Sources */,
 				A0109B7F28095BE00036DF20 /* AppDelegate.swift in Sources */,
 				A0109B8128095BE00036DF20 /* SceneDelegate.swift in Sources */,
+				A08FAEE2280E6CE500397E6C /* CurrentWeather.swift in Sources */,
 				A0107BD7280D256D00F9221A /* CurrentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

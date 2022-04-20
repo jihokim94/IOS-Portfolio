@@ -19,7 +19,11 @@ class CurrentTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         backgroundColor = .clear // 투명하게하기
+        currentCity.textColor = .white
+        currentStatus.textColor = .white
+        currentTemp.textColor = .white
     }
+    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

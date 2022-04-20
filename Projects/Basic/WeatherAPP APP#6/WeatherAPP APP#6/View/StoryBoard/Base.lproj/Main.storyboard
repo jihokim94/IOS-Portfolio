@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KyS-XA-AzE">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="KyS-XA-AzE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EsY-2a-mTU">
                                 <rect key="frame" x="50" y="52" width="324" height="34"/>
@@ -35,6 +35,7 @@
                                     <constraint firstAttribute="height" constant="40" id="y6Q-mV-Uq2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal">
                                     <imageReference key="image" image="location.circle" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="21" scale="large"/>
@@ -49,6 +50,7 @@
                                     <constraint firstAttribute="height" constant="40" id="N6L-BP-GUq"/>
                                     <constraint firstAttribute="width" constant="40" id="cn2-lr-Cjf"/>
                                 </constraints>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal">
                                     <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="21" scale="large"/>
@@ -60,9 +62,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Tj-S8-cTN">
                                 <rect key="frame" x="0.0" y="96" width="414" height="766"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aRc-zn-b8F">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aRc-zn-b8F">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="766"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="currentCell" rowHeight="166" id="ZXU-M4-GVK" customClass="CurrentTableViewCell" customModule="WeatherAPP_APP_6" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="24.5" width="414" height="166"/>
@@ -154,13 +156,13 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="45" id="3yh-Hd-FSg"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상태" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="br4-s6-Kb0">
                                                             <rect key="frame" x="244.5" y="27.5" width="99.5" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -196,7 +198,7 @@
                                         <sections/>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="aRc-zn-b8F" firstAttribute="leading" secondItem="2Tj-S8-cTN" secondAttribute="leading" id="FRw-eC-1QK"/>
                                     <constraint firstAttribute="trailing" secondItem="aRc-zn-b8F" secondAttribute="trailing" id="VKY-fc-pU8"/>
@@ -217,15 +219,16 @@
                             <constraint firstItem="Ops-AE-qKK" firstAttribute="trailing" secondItem="2Tj-S8-cTN" secondAttribute="trailing" id="ah8-iY-F9F"/>
                             <constraint firstItem="cZR-N1-caF" firstAttribute="leading" secondItem="EsY-2a-mTU" secondAttribute="trailing" constant="5" id="bex-0o-hCc"/>
                             <constraint firstItem="OHp-Gl-ctz" firstAttribute="top" secondItem="Ops-AE-qKK" secondAttribute="top" constant="5" id="hzZ-46-Tyg"/>
-                            <constraint firstItem="KyS-XA-AzE" firstAttribute="top" secondItem="Ops-AE-qKK" secondAttribute="top" id="lLJ-94-Nmx"/>
+                            <constraint firstItem="KyS-XA-AzE" firstAttribute="top" secondItem="8RH-ri-zxz" secondAttribute="top" id="lLJ-94-Nmx"/>
                             <constraint firstItem="2Tj-S8-cTN" firstAttribute="top" secondItem="EsY-2a-mTU" secondAttribute="bottom" constant="10" id="lfl-Yj-ho0"/>
-                            <constraint firstItem="Ops-AE-qKK" firstAttribute="bottom" secondItem="KyS-XA-AzE" secondAttribute="bottom" id="phA-il-Au6"/>
+                            <constraint firstAttribute="bottom" secondItem="KyS-XA-AzE" secondAttribute="bottom" id="phA-il-Au6"/>
                             <constraint firstItem="cZR-N1-caF" firstAttribute="top" secondItem="Ops-AE-qKK" secondAttribute="top" constant="5" id="rSb-QB-Tyv"/>
                             <constraint firstItem="Ops-AE-qKK" firstAttribute="bottom" secondItem="2Tj-S8-cTN" secondAttribute="bottom" id="xYz-3j-Yv8"/>
                             <constraint firstItem="cZR-N1-caF" firstAttribute="trailing" secondItem="Ops-AE-qKK" secondAttribute="trailing" constant="5" id="zZw-jy-7mc"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchTextField" destination="EsY-2a-mTU" id="KwE-bh-sLt"/>
                         <outlet property="tableview" destination="aRc-zn-b8F" id="XQx-5X-Rht"/>
                     </connections>
                 </viewController>
@@ -235,6 +238,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background" width="621" height="1344"/>
         <image name="location.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="sunrise" catalog="system" width="128" height="97"/>
