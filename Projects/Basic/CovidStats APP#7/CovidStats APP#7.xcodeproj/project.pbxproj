@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		91A1C8FA6628840D52AE4EF3 /* Pods_CovidStats_APP_7.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36F3155D2154571B1610479C /* Pods_CovidStats_APP_7.framework */; };
+		A0D8F837281A425F009D7F3A /* CovidDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F836281A425F009D7F3A /* CovidDetailTableViewController.swift */; };
 		A0E2EE3A281A3B0C00B838FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E2EE39281A3B0C00B838FD /* AppDelegate.swift */; };
 		A0E2EE3C281A3B0C00B838FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E2EE3B281A3B0C00B838FD /* SceneDelegate.swift */; };
 		A0E2EE3E281A3B0C00B838FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E2EE3D281A3B0C00B838FD /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		36F3155D2154571B1610479C /* Pods_CovidStats_APP_7.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CovidStats_APP_7.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		653060F0E7AFBFB335137E71 /* Pods-CovidStats APP#7.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidStats APP#7.debug.xcconfig"; path = "Target Support Files/Pods-CovidStats APP#7/Pods-CovidStats APP#7.debug.xcconfig"; sourceTree = "<group>"; };
+		A0D8F836281A425F009D7F3A /* CovidDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidDetailTableViewController.swift; sourceTree = "<group>"; };
 		A0E2EE36281A3B0C00B838FD /* CovidStats APP#7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CovidStats APP#7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E2EE39281A3B0C00B838FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0E2EE3B281A3B0C00B838FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +50,6 @@
 				653060F0E7AFBFB335137E71 /* Pods-CovidStats APP#7.debug.xcconfig */,
 				D4CECF749CF63A4DDC923591 /* Pods-CovidStats APP#7.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,6 +89,7 @@
 				A0E2EE42281A3B0E00B838FD /* Assets.xcassets */,
 				A0E2EE44281A3B0E00B838FD /* LaunchScreen.storyboard */,
 				A0E2EE47281A3B0E00B838FD /* Info.plist */,
+				A0D8F836281A425F009D7F3A /* CovidDetailTableViewController.swift */,
 			);
 			path = "CovidStats APP#7";
 			sourceTree = "<group>";
@@ -208,6 +210,7 @@
 			files = (
 				A0E2EE3E281A3B0C00B838FD /* ViewController.swift in Sources */,
 				A0E2EE3A281A3B0C00B838FD /* AppDelegate.swift in Sources */,
+				A0D8F837281A425F009D7F3A /* CovidDetailTableViewController.swift in Sources */,
 				A0E2EE3C281A3B0C00B838FD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
