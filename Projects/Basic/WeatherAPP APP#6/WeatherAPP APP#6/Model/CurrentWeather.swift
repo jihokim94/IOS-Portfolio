@@ -24,7 +24,7 @@ struct Weather : Codable{
 }
 
 
-struct CurrentData {
+struct CurrentData : Codable {
     let weatherId : Int
     let cityName : String
     let temperature : Double
@@ -49,5 +49,5 @@ struct CurrentData {
         default:
             return "cloud"
         }
+    }
 }
-

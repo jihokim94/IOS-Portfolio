@@ -28,7 +28,7 @@ struct ForecastWeather : Codable {
     }
 }
 
-struct ForecastData { // 테이블에 잘 넣을 수 있도록 구조체 하나 더만듬
+struct ForecastData :Codable { // 테이블에 잘 넣을 수 있도록 구조체 하나 더만듬
     let weatherId : Int
     let date : Date
     let description : String
