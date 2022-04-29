@@ -102,7 +102,7 @@
         <!--Covid Detail Table View Controller-->
         <scene sceneID="76O-Kk-ZqJ">
             <objects>
-                <tableViewController id="eTR-P4-kjC" customClass="CovidDetailTableViewController" customModule="CovidStats_APP_7" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CovidDetailTableViewController" id="eTR-P4-kjC" customClass="CovidDetailTableViewController" customModule="CovidStats_APP_7" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pyl-6h-MG2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

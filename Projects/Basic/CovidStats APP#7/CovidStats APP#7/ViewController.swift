@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var newCaseLabel: UILabel!
     @IBOutlet weak var pieChart: PieChartView!
     
-    
     //    var covidOverView : CovidOverView?
     
     override func viewDidLoad() {
@@ -32,16 +31,18 @@ class ViewController: UIViewController {
         })
     }
     private func makeCityOverViewList(covidOverView : CovidOverView) -> [CityOverView] {
-        return [covidOverView.busan,covidOverView.daegu,covidOverView.daegu,covidOverView.ulsan,covidOverView.jeju,covidOverView.jeonbuk,covidOverView.jeonnam,covidOverView.chungbuk,covidOverView.chungnam,covidOverView.incheon,covidOverView.gangwon,covidOverView.gwangju,covidOverView.gyeongbuk,covidOverView.gyeongnam,covidOverView.sejong]
+        return [covidOverView.busan,covidOverView.daegu,covidOverView.daejeon,covidOverView.ulsan,covidOverView.jeju,covidOverView.jeonbuk,covidOverView.jeonnam,covidOverView.chungbuk,covidOverView.chungnam,covidOverView.incheon,covidOverView.gangwon,covidOverView.gwangju,covidOverView.gyeongbuk,covidOverView.gyeongnam,covidOverView.sejong]
     }
     private func configureStackView(koreaCovidOverView : CityOverView){
         totalCaseLabel.text = "\(koreaCovidOverView.totalCase)명"
         newCaseLabel.text = "\(koreaCovidOverView.newCase)명"
     }
     private func configurePieChart(cityOverViewList : [CityOverView]) {
+        
+        self.pieChart.delegate = self
         let entries = cityOverViewList.compactMap { [weak self] overview -> PieChartDataEntry? in
             guard let self = self else {return nil}
-            return PieChartDataEntry(value: self.numberFormmatter(str :overview.newCase), label: overview.countryName)
+            return PieChartDataEntry(value: self.numberFormmatter(str :overview.newCase), label: overview.countryName , data: overview)
         }
         let dataSet = PieChartDataSet(entries: entries, label: "코로나 발생 현황")
         dataSet.sliceSpace = 1
@@ -86,3 +87,12 @@ class ViewController: UIViewController {
     
 }
 
+
+extension ViewController : ChartViewDelegate {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        guard let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "CovidDetailTableViewController") as? CovidDetailTableViewController else { return }
+        detailViewController.cityOverView = entry.data as? CityOverView
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+        
+    }
+}
