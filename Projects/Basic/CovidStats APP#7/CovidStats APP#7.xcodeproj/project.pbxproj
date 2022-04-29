@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		91A1C8FA6628840D52AE4EF3 /* Pods_CovidStats_APP_7.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36F3155D2154571B1610479C /* Pods_CovidStats_APP_7.framework */; };
+		A09D79D1281A6BE0006CEC69 /* CovidOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D79D0281A6BE0006CEC69 /* CovidOverView.swift */; };
+		A09D79D4281A9201006CEC69 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D79D3281A9201006CEC69 /* APIKey.swift */; };
 		A0D8F837281A425F009D7F3A /* CovidDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F836281A425F009D7F3A /* CovidDetailTableViewController.swift */; };
 		A0E2EE3A281A3B0C00B838FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E2EE39281A3B0C00B838FD /* AppDelegate.swift */; };
 		A0E2EE3C281A3B0C00B838FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E2EE3B281A3B0C00B838FD /* SceneDelegate.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		36F3155D2154571B1610479C /* Pods_CovidStats_APP_7.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CovidStats_APP_7.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		653060F0E7AFBFB335137E71 /* Pods-CovidStats APP#7.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidStats APP#7.debug.xcconfig"; path = "Target Support Files/Pods-CovidStats APP#7/Pods-CovidStats APP#7.debug.xcconfig"; sourceTree = "<group>"; };
+		A09D79D0281A6BE0006CEC69 /* CovidOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidOverView.swift; sourceTree = "<group>"; };
+		A09D79D3281A9201006CEC69 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		A0D8F836281A425F009D7F3A /* CovidDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidDetailTableViewController.swift; sourceTree = "<group>"; };
 		A0E2EE36281A3B0C00B838FD /* CovidStats APP#7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CovidStats APP#7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E2EE39281A3B0C00B838FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A09D79CF281A6B7E006CEC69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A09D79D0281A6BE0006CEC69 /* CovidOverView.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A0E2EE2D281A3B0C00B838FD = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +94,7 @@
 		A0E2EE38281A3B0C00B838FD /* CovidStats APP#7 */ = {
 			isa = PBXGroup;
 			children = (
+				A09D79CF281A6B7E006CEC69 /* Model */,
 				A0E2EE39281A3B0C00B838FD /* AppDelegate.swift */,
 				A0E2EE3B281A3B0C00B838FD /* SceneDelegate.swift */,
 				A0E2EE3D281A3B0C00B838FD /* ViewController.swift */,
@@ -90,6 +103,7 @@
 				A0E2EE44281A3B0E00B838FD /* LaunchScreen.storyboard */,
 				A0E2EE47281A3B0E00B838FD /* Info.plist */,
 				A0D8F836281A425F009D7F3A /* CovidDetailTableViewController.swift */,
+				A09D79D3281A9201006CEC69 /* APIKey.swift */,
 			);
 			path = "CovidStats APP#7";
 			sourceTree = "<group>";
@@ -211,6 +225,8 @@
 				A0E2EE3E281A3B0C00B838FD /* ViewController.swift in Sources */,
 				A0E2EE3A281A3B0C00B838FD /* AppDelegate.swift in Sources */,
 				A0D8F837281A425F009D7F3A /* CovidDetailTableViewController.swift in Sources */,
+				A09D79D1281A6BE0006CEC69 /* CovidOverView.swift in Sources */,
+				A09D79D4281A9201006CEC69 /* APIKey.swift in Sources */,
 				A0E2EE3C281A3B0C00B838FD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

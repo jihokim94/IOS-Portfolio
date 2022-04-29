@@ -22,7 +22,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvj-Qq-ti6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-562" y="-148"/>
+            <point key="canvasLocation" x="-562" y="-182"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="AVJ-Kq-eJH">
@@ -91,6 +91,7 @@
                     <navigationItem key="navigationItem" id="ZMe-Qo-iqD"/>
                     <connections>
                         <outlet property="newCaseLabel" destination="JjP-Jr-psn" id="wuL-Ke-sxc"/>
+                        <outlet property="pieChart" destination="OuF-mT-L9D" id="dDr-ch-oon"/>
                         <outlet property="totalCaseLabel" destination="rkL-w2-T6G" id="3b8-1X-PXU"/>
                     </connections>
                 </viewController>
@@ -297,7 +298,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDs-Q2-Xgg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1111" y="-177"/>
+            <point key="canvasLocation" x="832" y="-182"/>
         </scene>
     </scenes>
     <resources>
