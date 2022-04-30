@@ -13,13 +13,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalCaseLabel: UILabel!
     @IBOutlet weak var newCaseLabel: UILabel!
     @IBOutlet weak var pieChart: PieChartView!
-    
-    //    var covidOverView : CovidOverView?
-    
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var stackView: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.startAnimating()
         fetchCovidOverView (completionHandler: { [weak self] result in
             guard let self = self else { return }
+            self.indicator.stopAnimating()
+            self.indicator.isHidden = true
+            self.stackView.isHidden = false
+            self.pieChart.isHidden = false
             switch result {
             case let .success(data) :
                 self.configureStackView(koreaCovidOverView: data.korea)
