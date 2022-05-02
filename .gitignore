@@ -1,2 +1,4 @@
 .DS_Store
 APIKey.swift
+*.plist
+AuthKey.swift
