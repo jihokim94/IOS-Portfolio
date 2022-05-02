@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  CovidStats APP#7
+//  LoginAPPWithAuth APP#8
 //
-//  Created by 김지호 on 2022/04/28.
+//  Created by 김지호 on 2022/05/02.
 //
 
 import UIKit

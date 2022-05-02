@@ -7,27 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A0E2EE3A281A3B0C00B838FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E2EE39281A3B0C00B838FD /* AppDelegate.swift */; };
-		A0E2EE3C281A3B0C00B838FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E2EE3B281A3B0C00B838FD /* SceneDelegate.swift */; };
-		A0E2EE3E281A3B0C00B838FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E2EE3D281A3B0C00B838FD /* ViewController.swift */; };
-		A0E2EE41281A3B0C00B838FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E2EE3F281A3B0C00B838FD /* Main.storyboard */; };
-		A0E2EE43281A3B0E00B838FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0E2EE42281A3B0E00B838FD /* Assets.xcassets */; };
-		A0E2EE46281A3B0E00B838FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E2EE44281A3B0E00B838FD /* LaunchScreen.storyboard */; };
+		A0873B1D281FEF7100967359 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0873B1C281FEF7100967359 /* MainViewController.swift */; };
+		A0E93D24281FC7D900CCD4F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E93D23281FC7D900CCD4F3 /* AppDelegate.swift */; };
+		A0E93D26281FC7D900CCD4F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E93D25281FC7D900CCD4F3 /* SceneDelegate.swift */; };
+		A0E93D28281FC7D900CCD4F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E93D27281FC7D900CCD4F3 /* LoginViewController.swift */; };
+		A0E93D2B281FC7D900CCD4F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E93D29281FC7D900CCD4F3 /* Main.storyboard */; };
+		A0E93D2D281FC7D900CCD4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0E93D2C281FC7D900CCD4F3 /* Assets.xcassets */; };
+		A0E93D30281FC7D900CCD4F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E93D2E281FC7D900CCD4F3 /* LaunchScreen.storyboard */; };
+		A0E93D3A281FD3DF00CCD4F3 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E93D39281FD3DF00CCD4F3 /* EmailLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A0E2EE36281A3B0C00B838FD /* CovidStats APP#7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CovidStats APP#7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0E2EE39281A3B0C00B838FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0E2EE3B281A3B0C00B838FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A0E2EE3D281A3B0C00B838FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A0E2EE40281A3B0C00B838FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A0E2EE42281A3B0E00B838FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A0E2EE45281A3B0E00B838FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A0E2EE47281A3B0E00B838FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0873B1C281FEF7100967359 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A0E93D20281FC7D900CCD4F3 /* LoginAPPWithAuth APP#8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LoginAPPWithAuth APP#8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0E93D23281FC7D900CCD4F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A0E93D25281FC7D900CCD4F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A0E93D27281FC7D900CCD4F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A0E93D2A281FC7D900CCD4F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A0E93D2C281FC7D900CCD4F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A0E93D2F281FC7D900CCD4F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A0E93D31281FC7D900CCD4F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0E93D39281FD3DF00CCD4F3 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A0E2EE33281A3B0C00B838FD /* Frameworks */ = {
+		A0E93D1D281FC7D900CCD4F3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,71 +41,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A0E2EE2D281A3B0C00B838FD = {
+		A0E93D17281FC7D900CCD4F3 = {
 			isa = PBXGroup;
 			children = (
-				A0E2EE38281A3B0C00B838FD /* CovidStats APP#7 */,
-				A0E2EE37281A3B0C00B838FD /* Products */,
+				A0E93D22281FC7D900CCD4F3 /* LoginAPPWithAuth APP#8 */,
+				A0E93D21281FC7D900CCD4F3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A0E2EE37281A3B0C00B838FD /* Products */ = {
+		A0E93D21281FC7D900CCD4F3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A0E2EE36281A3B0C00B838FD /* CovidStats APP#7.app */,
+				A0E93D20281FC7D900CCD4F3 /* LoginAPPWithAuth APP#8.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A0E2EE38281A3B0C00B838FD /* CovidStats APP#7 */ = {
+		A0E93D22281FC7D900CCD4F3 /* LoginAPPWithAuth APP#8 */ = {
 			isa = PBXGroup;
 			children = (
-				A0E2EE39281A3B0C00B838FD /* AppDelegate.swift */,
-				A0E2EE3B281A3B0C00B838FD /* SceneDelegate.swift */,
-				A0E2EE3D281A3B0C00B838FD /* ViewController.swift */,
-				A0E2EE3F281A3B0C00B838FD /* Main.storyboard */,
-				A0E2EE42281A3B0E00B838FD /* Assets.xcassets */,
-				A0E2EE44281A3B0E00B838FD /* LaunchScreen.storyboard */,
-				A0E2EE47281A3B0E00B838FD /* Info.plist */,
+				A0E93D23281FC7D900CCD4F3 /* AppDelegate.swift */,
+				A0E93D25281FC7D900CCD4F3 /* SceneDelegate.swift */,
+				A0E93D27281FC7D900CCD4F3 /* LoginViewController.swift */,
+				A0E93D29281FC7D900CCD4F3 /* Main.storyboard */,
+				A0E93D39281FD3DF00CCD4F3 /* EmailLoginViewController.swift */,
+				A0E93D2C281FC7D900CCD4F3 /* Assets.xcassets */,
+				A0E93D2E281FC7D900CCD4F3 /* LaunchScreen.storyboard */,
+				A0E93D31281FC7D900CCD4F3 /* Info.plist */,
+				A0873B1C281FEF7100967359 /* MainViewController.swift */,
 			);
-			path = "CovidStats APP#7";
+			path = "LoginAPPWithAuth APP#8";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A0E2EE35281A3B0C00B838FD /* CovidStats APP#7 */ = {
+		A0E93D1F281FC7D900CCD4F3 /* LoginAPPWithAuth APP#8 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0E2EE4A281A3B0E00B838FD /* Build configuration list for PBXNativeTarget "CovidStats APP#7" */;
+			buildConfigurationList = A0E93D34281FC7D900CCD4F3 /* Build configuration list for PBXNativeTarget "LoginAPPWithAuth APP#8" */;
 			buildPhases = (
-				A0E2EE32281A3B0C00B838FD /* Sources */,
-				A0E2EE33281A3B0C00B838FD /* Frameworks */,
-				A0E2EE34281A3B0C00B838FD /* Resources */,
+				A0E93D1C281FC7D900CCD4F3 /* Sources */,
+				A0E93D1D281FC7D900CCD4F3 /* Frameworks */,
+				A0E93D1E281FC7D900CCD4F3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "CovidStats APP#7";
-			productName = "CovidStats APP#7";
-			productReference = A0E2EE36281A3B0C00B838FD /* CovidStats APP#7.app */;
+			name = "LoginAPPWithAuth APP#8";
+			productName = "LoginAPPWithAuth APP#8";
+			productReference = A0E93D20281FC7D900CCD4F3 /* LoginAPPWithAuth APP#8.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A0E2EE2E281A3B0C00B838FD /* Project object */ = {
+		A0E93D18281FC7D900CCD4F3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					A0E2EE35281A3B0C00B838FD = {
+					A0E93D1F281FC7D900CCD4F3 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
 				};
 			};
-			buildConfigurationList = A0E2EE31281A3B0C00B838FD /* Build configuration list for PBXProject "CovidStats APP#7" */;
+			buildConfigurationList = A0E93D1B281FC7D900CCD4F3 /* Build configuration list for PBXProject "LoginAPPWithAuth APP#8" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -109,55 +115,57 @@
 				en,
 				Base,
 			);
-			mainGroup = A0E2EE2D281A3B0C00B838FD;
-			productRefGroup = A0E2EE37281A3B0C00B838FD /* Products */;
+			mainGroup = A0E93D17281FC7D900CCD4F3;
+			productRefGroup = A0E93D21281FC7D900CCD4F3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A0E2EE35281A3B0C00B838FD /* CovidStats APP#7 */,
+				A0E93D1F281FC7D900CCD4F3 /* LoginAPPWithAuth APP#8 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A0E2EE34281A3B0C00B838FD /* Resources */ = {
+		A0E93D1E281FC7D900CCD4F3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0E2EE46281A3B0E00B838FD /* LaunchScreen.storyboard in Resources */,
-				A0E2EE43281A3B0E00B838FD /* Assets.xcassets in Resources */,
-				A0E2EE41281A3B0C00B838FD /* Main.storyboard in Resources */,
+				A0E93D30281FC7D900CCD4F3 /* LaunchScreen.storyboard in Resources */,
+				A0E93D2D281FC7D900CCD4F3 /* Assets.xcassets in Resources */,
+				A0E93D2B281FC7D900CCD4F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A0E2EE32281A3B0C00B838FD /* Sources */ = {
+		A0E93D1C281FC7D900CCD4F3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0E2EE3E281A3B0C00B838FD /* ViewController.swift in Sources */,
-				A0E2EE3A281A3B0C00B838FD /* AppDelegate.swift in Sources */,
-				A0E2EE3C281A3B0C00B838FD /* SceneDelegate.swift in Sources */,
+				A0E93D28281FC7D900CCD4F3 /* LoginViewController.swift in Sources */,
+				A0E93D3A281FD3DF00CCD4F3 /* EmailLoginViewController.swift in Sources */,
+				A0E93D24281FC7D900CCD4F3 /* AppDelegate.swift in Sources */,
+				A0E93D26281FC7D900CCD4F3 /* SceneDelegate.swift in Sources */,
+				A0873B1D281FEF7100967359 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A0E2EE3F281A3B0C00B838FD /* Main.storyboard */ = {
+		A0E93D29281FC7D900CCD4F3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A0E2EE40281A3B0C00B838FD /* Base */,
+				A0E93D2A281FC7D900CCD4F3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A0E2EE44281A3B0E00B838FD /* LaunchScreen.storyboard */ = {
+		A0E93D2E281FC7D900CCD4F3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A0E2EE45281A3B0E00B838FD /* Base */,
+				A0E93D2F281FC7D900CCD4F3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -165,7 +173,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A0E2EE48281A3B0E00B838FD /* Debug */ = {
+		A0E93D32281FC7D900CCD4F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -226,7 +234,7 @@
 			};
 			name = Debug;
 		};
-		A0E2EE49281A3B0E00B838FD /* Release */ = {
+		A0E93D33281FC7D900CCD4F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -281,38 +289,38 @@
 			};
 			name = Release;
 		};
-		A0E2EE4B281A3B0E00B838FD /* Debug */ = {
+		A0E93D35281FC7D900CCD4F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92RVV74P3B;
-				INFOPLIST_FILE = "CovidStats APP#7/Info.plist";
+				INFOPLIST_FILE = "LoginAPPWithAuth APP#8/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jiho.CovidStats-APP-7";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jiho.LoginAPPWithAuth-APP-8";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		A0E2EE4C281A3B0E00B838FD /* Release */ = {
+		A0E93D36281FC7D900CCD4F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92RVV74P3B;
-				INFOPLIST_FILE = "CovidStats APP#7/Info.plist";
+				INFOPLIST_FILE = "LoginAPPWithAuth APP#8/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jiho.CovidStats-APP-7";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jiho.LoginAPPWithAuth-APP-8";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,25 +330,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A0E2EE31281A3B0C00B838FD /* Build configuration list for PBXProject "CovidStats APP#7" */ = {
+		A0E93D1B281FC7D900CCD4F3 /* Build configuration list for PBXProject "LoginAPPWithAuth APP#8" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A0E2EE48281A3B0E00B838FD /* Debug */,
-				A0E2EE49281A3B0E00B838FD /* Release */,
+				A0E93D32281FC7D900CCD4F3 /* Debug */,
+				A0E93D33281FC7D900CCD4F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0E2EE4A281A3B0E00B838FD /* Build configuration list for PBXNativeTarget "CovidStats APP#7" */ = {
+		A0E93D34281FC7D900CCD4F3 /* Build configuration list for PBXNativeTarget "LoginAPPWithAuth APP#8" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A0E2EE4B281A3B0E00B838FD /* Debug */,
-				A0E2EE4C281A3B0E00B838FD /* Release */,
+				A0E93D35281FC7D900CCD4F3 /* Debug */,
+				A0E93D36281FC7D900CCD4F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A0E2EE2E281A3B0C00B838FD /* Project object */;
+	rootObject = A0E93D18281FC7D900CCD4F3 /* Project object */;
 }
