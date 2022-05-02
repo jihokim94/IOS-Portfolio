@@ -1,0 +1,6 @@
+framework module Pods_LoginAPPWithAuth_APP_8 {
+  umbrella header "Pods-LoginAPPWithAuth APP#8-umbrella.h"
+
+  export *
+  module * { export * }
+}
