@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D1FABE4590D3861C481765C56597A39C"
-               BuildableName = "Pods-LoginAPPWithAuth APP#8.framework"
+               BuildableName = "Pods_LoginAPPWithAuth_APP_8.framework"
                BlueprintName = "Pods-LoginAPPWithAuth APP#8"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
