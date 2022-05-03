@@ -29,7 +29,13 @@ class MainViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     @IBAction func taplogoutButton(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as! LoginViewController
-        self.navigationController?.popToViewController(vc, animated: true)
+        let fireBaseAuth = Auth.auth()
+        do {
+            try fireBaseAuth.signOut()
+            print("로그아웃 성공")
+            self.navigationController?.popToRootViewController(animated: true)
+        } catch let signOutError as NSError {
+            print("Sign Out Error : \(signOutError.localizedDescription)")
+        }
     }
 }
