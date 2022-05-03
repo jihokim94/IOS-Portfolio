@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class EmailLoginViewController: UIViewController {
     
@@ -28,8 +29,23 @@ class EmailLoginViewController: UIViewController {
     
     
     @IBAction func tapNextButton(_ sender: UIButton) {
+        let email = self.emailTextField.text ?? ""
+        let password = self.passwordTextField.text ?? ""
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
+            guard let self = self else { return }
+            guard let result = authResult, error == nil  else {
+                print(error?.localizedDescription)
+                return}
+            print("새로운 유저 저장 성공")
+            self.showMainViewController()
+        }
     }
     
+    private func showMainViewController(){
+        let MainVC = storyboard?.instantiateViewController(identifier: "MainViewController") as! MainViewController
+        MainVC.modalPresentationStyle = .fullScreen
+        navigationController?.show(MainVC, sender: nil)
+    }
     
 }
 
