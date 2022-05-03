@@ -33,14 +33,36 @@ class EmailLoginViewController: UIViewController {
         let password = self.passwordTextField.text ?? ""
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
             guard let self = self else { return }
-            guard let result = authResult, error == nil  else {
-                print(error?.localizedDescription)
-                return}
-            print("새로운 유저 저장 성공")
-            self.showMainViewController()
+//            guard let result = authResult, error == nil  else {
+//                print(error?.localizedDescription)
+//                return}
+            if let error = error {
+                let code = (error as NSError).code
+                switch code {
+                case 17007: // 이미 있는 계정으로 가입한경우
+                    // 로그인하기
+                    self.userLoginWithEmail(email: email, password: password)
+                default:
+                    let errorMessage = error.localizedDescription
+                    self.errorMessageLabel.text = errorMessage
+                }
+            } else {
+                print("새로운 유저 저장 성공")
+                self.showMainViewController()
+            }
         }
     }
-    
+    private func userLoginWithEmail(email : String , password : String ){
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            guard let self = self else { return }
+            if let error = error {
+                self.errorMessageLabel.text = error.localizedDescription
+            } else {
+                print("기존 유저 로그인 성공")
+                self.showMainViewController()
+            }
+        }
+    }
     private func showMainViewController(){
         let MainVC = storyboard?.instantiateViewController(identifier: "MainViewController") as! MainViewController
         MainVC.modalPresentationStyle = .fullScreen
