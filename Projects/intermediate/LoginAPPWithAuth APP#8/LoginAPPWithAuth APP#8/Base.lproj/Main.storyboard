@@ -82,6 +82,9 @@
                                         <state key="normal" title="구글로 계속하기" image="logo_google">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapGoogleSignIn:" destination="RR4-yG-OYP" eventType="touchUpInside" id="uou-NA-43E"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWV-yX-YTP">
                                         <rect key="frame" x="0.0" y="148" width="374" height="60"/>
@@ -94,6 +97,9 @@
                                         <state key="normal" title="애플로 계속하기" image="logo_apple">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapAppleSignIn:" destination="RR4-yG-OYP" eventType="touchUpInside" id="1tw-Fh-0Yn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
