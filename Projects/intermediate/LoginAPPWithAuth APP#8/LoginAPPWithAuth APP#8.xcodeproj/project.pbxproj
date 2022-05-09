@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -89,7 +89,6 @@
 				8200C52FAB120CF12B87E03C /* Pods-LoginAPPWithAuth APP#8.debug.xcconfig */,
 				AB79A733E054382AE947DF41 /* Pods-LoginAPPWithAuth APP#8.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
